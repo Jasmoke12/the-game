@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Preguntas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Asegura que el fondo esté detrás de otros elementos */
+            background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+        }
+    </style>
+</head>
+<body>
+    <div class="background" id="backgroundImage"></div>
+    <div class="container">
+        <h1>Juego de Preguntas de Inglés</h1>
+        
+        <div id="enemy">
+            <h2>Enemigo</h2>
+            <img id="enemyImage" src="enemy1.png" alt="Imagen del enemigo" style="width: 100px; height: auto;">
+            <div id="enemyHealth" style="width: 100%; background-color: red; height: 20px;"></div>
+            <p id="enemyStatus">Vida: 100</p>
+        </div>
+
+        <div id="player">
+            <h2>Tu Vida</h2>
+            <div id="playerHealth" style="width: 100%; background-color: green; height: 20px;"></div>
+            <p id="playerStatus">Vida: 100</p>
+        </div>
+
+        <div id="questionSection" style="display:none;">
+            <h2 id="question"></h2>
+            <input type="text" id="answer" placeholder="Tu respuesta">
+            <button onclick="checkAnswer()">Responder</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
